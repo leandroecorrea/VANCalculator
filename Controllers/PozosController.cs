@@ -4,7 +4,7 @@ using WebApp.Model;
 namespace WebApp.Controllers;
 
 [ApiController]
-[Route("pozos")]
+[Route("[controller]")]
 
 public class PozosController : ControllerBase
 {

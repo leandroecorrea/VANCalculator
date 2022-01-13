@@ -19,6 +19,7 @@ import { PozoComponent } from './pozos/pozos.component';
     CounterComponent,
     FetchDataComponent,
     PozoComponent
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,7 +29,7 @@ import { PozoComponent } from './pozos/pozos.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'pozosapp', component: PozoComponent}
+      { path: 'pozos', component: PozoComponent },
     ])
   ],
   providers: [],

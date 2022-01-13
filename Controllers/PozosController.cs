@@ -22,26 +22,21 @@ public class PozosController : ControllerBase
                 100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45
             },
             Precio = 70,
-            Inversion = 100000
+            Inversion = 100
         };
-        pozo1.SetVAN();
 
         Pozo pozo2 = new Pozo{
             Produccion = new List<int>{
                 100, 95, 90, 85, 80, 75, 70, 65, 60, 
             },
             Precio = 70,
-            Inversion = 100000
+            Inversion = 1000
         };
-        pozo2.SetVAN();
 
         List<Pozo> pozos = new List<Pozo>();
         pozos.Add(pozo1);
         pozos.Add(pozo2);
-        foreach(Pozo pozo in pozos)
-        {
-            Console.WriteLine("Cotizacion pozo:" + pozo.Precio);
-        }
+        
         return pozos;
     }
 }

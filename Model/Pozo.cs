@@ -4,22 +4,18 @@ public class Pozo
     public List<int> Produccion { get; set; }
     public float Precio { get; set; }
     public float Inversion { get; set; }
-    public float VAN;
+    public float VAN => SetVAN();
     private static readonly float TASA_DE_INTERES = 3f;
-    public Pozo()
-    {
-        Produccion = new List<int>();
-    }
-
     private int MesesDeInversion {get; set;}
-    public void SetVAN()
+    public float SetVAN()
     {
-        VAN = 0f; 
-        for(int i = 0; i < MesesDeInversion; i++)
+        float acum = 0f; 
+        for(int i = 1; i < Produccion.Count + 1; i++)
         {
-            float produccionMensual = (Produccion[i] * Precio) / (float)Math.Pow((1 + TASA_DE_INTERES), i);
-            VAN += produccionMensual;
+            float produccionMensual = (Produccion[i - 1] * Precio) / (float)Math.Pow((1 + TASA_DE_INTERES), i);
+            acum += produccionMensual;
         }
-        VAN -= Inversion;
+        acum -= Inversion;
+        return acum;
     }    
 }

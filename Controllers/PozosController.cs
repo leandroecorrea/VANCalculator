@@ -4,12 +4,12 @@ using WebApp.Model;
 namespace WebApp.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("pozos")]
 
-public class PozoController : ControllerBase
+public class PozosController : ControllerBase
 {
-    private readonly ILogger<PozoController> _logger;
-    public PozoController(ILogger<PozoController> logger)
+    private readonly ILogger<PozosController> _logger;
+    public PozosController(ILogger<PozosController> logger)
     {
         _logger = logger;
     }
@@ -38,6 +38,10 @@ public class PozoController : ControllerBase
         List<Pozo> pozos = new List<Pozo>();
         pozos.Add(pozo1);
         pozos.Add(pozo2);
+        foreach(Pozo pozo in pozos)
+        {
+            Console.WriteLine("Cotizacion pozo:" + pozo.Precio);
+        }
         return pozos;
     }
 }

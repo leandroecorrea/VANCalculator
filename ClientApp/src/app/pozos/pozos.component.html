@@ -1,0 +1,22 @@
+<h1 id="tableLabel">Calculador de VAN</h1>
+
+<p>Ejemplo de app simple en ASP.NET Angular.</p>
+
+<p *ngIf="!pozos"><em>Ayuda Dios...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="pozos">
+  <thead>
+    <tr>
+      <th>Precio</th>
+      <th>Inversion</th>
+      <th>VAN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pozo of pozos">
+      <td>{{ pozo.precio }}</td>
+      <td>{{ pozo.inversion }}</td>
+      <td>{{ pozo.VAN }}</td>
+    </tr>
+  </tbody>
+</table>
